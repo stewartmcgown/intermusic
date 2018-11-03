@@ -6,11 +6,10 @@ const { Project, Track } = require("./schemas");
 const { mongodb } = require("./credentials");
 const { host, user, password } = mongodb;
 
-console.log('TCL: host', host);
-console.log('TCL: user', user);
-console.log('TCL: password', password);
-
-if (!host) return;
+if (!host) {
+    console.error('database.js | Database host not found - exiting :(')
+    return;
+};
 
 // Connect to the database
 mongoose.connect(`mongodb://${user}:${password}@${host}`, {
