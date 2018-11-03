@@ -1,10 +1,12 @@
+// Get MongoDB library and schemas
 const mongoose = require("mongoose");
-
-const credentials = require("./credentials.json");
 const { Project, Track } = require("./schemas");
 
-const { host, user, password } = credentials.mongodb;
+// Get credentials for database
+const mongodb = require("./credentials");
+const { host, user, password } = mongodb;
 
+// Connect to the database
 mongoose.connect(`mongodb://${user}:${password}@${host}`, {
     useNewUrlParser: true
 });

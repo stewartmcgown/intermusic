@@ -8,18 +8,18 @@ const ObjectId = Schema.Types.ObjectId;
     https://mongoosejs.com/docs/schematypes.html#arrays
 */
 
-const projectSchema = new Schema({
-    name: String,
-    tracks: [trackSchema]
-})
-
-const trackSchema = new Schema({
+const TrackSchema = new Schema({
     name: String,
     url: String,
     length: Number,
 });
 
-const Track = mongoose.Model("track", trackSchema);
-const Project = mongoose.Model("project", projectSchema);
+const ProjectSchema = new Schema({
+    name: String,
+    tracks: [TrackSchema]
+});
 
-export default { Track, Project };
+const Track = mongoose.model("track", TrackSchema);
+const Project = mongoose.model("project", ProjectSchema);
+
+module.exports = { Track, Project };
