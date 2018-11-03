@@ -1,17 +1,14 @@
-const isDevEnvironment = process.env.DEV || true;
+require('dotenv').config();
 
-const credentials = getCredentials(isDevEnvironment);
-
-const { mongodb, aws } = credentials.mongodb;
-
-function getCredentials(isDevEnvironment) {
-    if (isDevEnvironment) {
-        return require("./credentials.json") || {};
-    } else {
-        return process.env.CREDENTIALS || {};
-    }
-}
+console.log(process.env.DB_USER);
 
 module.exports = {
-    mongodb, aws
-};
+    mongodb: {
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+    },
+    aws: {
+
+    }
+}

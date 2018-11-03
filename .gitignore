@@ -66,3 +66,6 @@ typings/
 
 # credentials
 **/credentials.json
+
+# dotenv
+**/.env
