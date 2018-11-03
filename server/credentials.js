@@ -9,6 +9,7 @@ module.exports = {
         password: process.env.DB_PASSWORD,
     },
     aws: {
-
+        accessKey: process.env.AWS_ACCESS_KEY,
+        secretKey: process.env.AWS_SECRET_KEY
     }
 }
