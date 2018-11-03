@@ -63,3 +63,6 @@ typings/
 # dist
 **/dist/*
 **/build/*
+
+# credentials
+**/credentials.json
