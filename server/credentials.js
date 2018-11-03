@@ -1,6 +1,8 @@
 require('dotenv').config();
 
+const port = process.env.PORT || 3000;
 const environment = process.env.NODE_ENV;
+
 console.log(`Running in environment: ${environment}`);
 
 if (!process.env.DB_USER) {
@@ -11,6 +13,7 @@ if (!process.env.AWS_ACCESS_KEY) {
     console.warn('Whoops, could not find AWS_ACCESS_KEY in environment variables. Make sure you have them all set!');
 }
 
+
 module.exports = {
     mongodb: {
         host: process.env.DB_HOST,
@@ -20,5 +23,6 @@ module.exports = {
     aws: {
         accessKey: process.env.AWS_ACCESS_KEY,
         secretKey: process.env.AWS_SECRET_KEY
-    }
+    },
+    port,
 }

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const port = process.env.PORT || 5000;
+const { port } = require('./credentials');
 
 // Start web sockets server
 const sockets = require("./sockets");
