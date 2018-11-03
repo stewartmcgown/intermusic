@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { Project, Track } = require("./schemas");
 
 // Get credentials for database
-const { mongodb } = require("./credentials");
+const { mongodb } = require("../credentials");
 const { host, user, password } = mongodb;
 
 if (!host) {
@@ -21,4 +21,4 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, '*MongoDB cries*'));
 db.once('open', () => {
     console.log('==> *MongoDB salutes*');
-});  
+});

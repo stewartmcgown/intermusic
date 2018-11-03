@@ -8,11 +8,11 @@ const { port } = require('./credentials');
 const INDEX_HTML = path.join(__dirname, 'index.html');
 
 // Start web sockets server
-const sockets = require("./sockets");
+const sockets = require("./src/sockets");
 sockets(server);
 
 // Connect to database
-require("./database");
+require("./src/database");
 
 // Create root endpoint to show server is up
 app.get('/', (req, res) => {
